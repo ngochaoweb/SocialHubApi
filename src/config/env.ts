@@ -8,6 +8,8 @@ const envSchema = z.object({
   PORT: z.coerce.number().int().positive().default(3000),
   JWT_SECRET: z.string().min(32, "JWT_SECRET phải >= 32 ký tự"),
   JWT_EXPIRE: z.string().default("15m"),
+  JWT_REFRESH_SECRET: z.string().min(32, "JWT_SECRET phải >= 32 ký tự"),
+  JWT_REFRESH_EXPIRE: z.string().default("7d"),
 });
 
 const parsed = envSchema.safeParse(process.env);

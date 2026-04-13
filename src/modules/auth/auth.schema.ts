@@ -22,5 +22,10 @@ export const loginSchema = z.object({
     .min(6, { message: "Mật khẩu tối thiểu 6 ký tự" }),
 });
 
+export const refreshSchema = z.object({
+  refreshToken: z.string({ message: "Refresh token là bắt buộc" }),
+});
+
 export type RegisterInput = z.infer<typeof registerSchema>;
-export type loginInput = z.infer<typeof loginSchema>;
+export type LoginInput = z.infer<typeof loginSchema>;
+export type RefreshInput = z.infer<typeof refreshSchema>;
