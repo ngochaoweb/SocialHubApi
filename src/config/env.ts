@@ -6,6 +6,8 @@ dotenv.config();
 const envSchema = z.object({
   NODE_ENV: z.enum(["development", "production", "test"]).default("development"),
   PORT: z.coerce.number().int().positive().default(3000),
+  JWT_SECRET: z.string().min(32, "JWT_SECRET phải >= 32 ký tự"),
+  JWT_EXPIRE: z.string().default("15m"),
 });
 
 const parsed = envSchema.safeParse(process.env);
