@@ -54,3 +54,8 @@ export type User = Prisma.UserModel
  * 
  */
 export type RefreshToken = Prisma.RefreshTokenModel
+/**
+ * Model Post
+ * 
+ */
+export type Post = Prisma.PostModel
